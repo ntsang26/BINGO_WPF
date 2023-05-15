@@ -65,7 +65,7 @@
                 </Grid.RowDefinitions>
             </Grid>
 
-            <TextBlock Text="" Name="tbMode" FontWeight="Bold" TextAlignment="Center" FontSize="20" Width="Auto" HorizontalAlignment="Center"  Canvas.Top="-32" Canvas.Left="100" FontFamily="Arial">
+            <TextBlock Text="" Name="tbMode" FontWeight="Bold" TextAlignment="Center" FontSize="20" Width="Auto"  Canvas.Top="-32" Canvas.Left="130" FontFamily="Arial">
                 <TextBlock.Background>
                     <ImageBrush ImageSource="pack://application:,,,/img/Bingo3x3/back_mode.png"/>
                 </TextBlock.Background>

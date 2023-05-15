@@ -34,7 +34,7 @@ namespace BaiTap
         {
             InitializeComponent();
             ImageBrush myBrush = new ImageBrush();
-            myBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/backgroundStart.jpg"));
+            myBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/backgroundStart1.jpg"));
             this.Background = myBrush;
            
         }
@@ -213,9 +213,9 @@ namespace BaiTap
                 Button button = new Button();
                 Button buttonC = new Button();
                 ImageBrush myBrushButton = new ImageBrush();
-                myBrushButton.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/buttonStart.png"));
+                myBrushButton.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/btn-getnow.png"));
                 ImageBrush myBrushButtonC = new ImageBrush();
-                myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/buttonClose.png"));
+                myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/button_close.png"));
                 // Create a new style for the button
                 Style myButtonStyle = new Style(typeof(Button));
                 Style myButtonStyle1 = new Style(typeof(Button));
@@ -376,9 +376,9 @@ namespace BaiTap
                 Button button = new Button();
                 Button buttonC = new Button();
                 ImageBrush myBrushButton = new ImageBrush();
-                myBrushButton.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/buttonStart.png"));
+                myBrushButton.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/btn-getnow.png"));
                 ImageBrush myBrushButtonC = new ImageBrush();
-                myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/buttonClose.png"));
+                myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/button_close.png"));
                 // Create a new style for the button
                 Style myButtonStyle = new Style(typeof(Button));
                 Style myButtonStyle1 = new Style(typeof(Button));
@@ -506,7 +506,7 @@ namespace BaiTap
             {
                 Button button = new Button();
                 ImageBrush myBrushButton = new ImageBrush();
-                myBrushButton.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/buttonStart.png"));
+                myBrushButton.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/btn-tryIt.png"));
                 button.Background = myBrushButton;
                 button.Width = 210;
                 button.Height = 60;
@@ -520,7 +520,7 @@ namespace BaiTap
                 var margin = button.Margin;
                 MainWindow main = new MainWindow();
                 Canvas.SetTop(button, index[i]);
-                margin.Left = main.Width - main.Width / 3.5 - 50;
+                margin.Left = 50;
                 margin.Top = 50;
                 button.Margin = margin;
                 button.Cursor = Cursors.Hand;

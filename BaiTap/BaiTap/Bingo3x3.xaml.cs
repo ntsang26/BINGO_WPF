@@ -296,7 +296,7 @@ namespace BaiTap
                             {
                                 if (value == "label" + button.Content)
                                 {
-                                    myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo3x3/star.png"));
+                                    myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/Star_vote.png"));
                                     button.Background = myBrush1;
                                     for (var m = 0; m < 3; m++)
                                     {
@@ -628,7 +628,7 @@ namespace BaiTap
             ImageBrush myBrushButtonC = new ImageBrush();
             if(check == true)
             {
-                myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo3x3/buttonPlay.png"));
+                myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/yes_button.png"));
             }
             else
             {

@@ -1,0 +1,132 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="music\**" />
+    <EmbeddedResource Remove="music\**" />
+    <None Remove="music\**" />
+    <Page Remove="music\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="icon.png" />
+    <None Remove="img\Bingo3x3\background3x3.jpg" />
+    <None Remove="img\Bingo3x3\backgroundMain3x3.jpg" />
+    <None Remove="img\Bingo3x3\backgroundMenu.png" />
+    <None Remove="img\Bingo3x3\back_bingo33.png" />
+    <None Remove="img\Bingo3x3\back_mode.png" />
+    <None Remove="img\Bingo3x3\back_nv.png" />
+    <None Remove="img\Bingo3x3\back_tabInfo.png" />
+    <None Remove="img\Bingo3x3\buttonClose.png" />
+    <None Remove="img\Bingo3x3\buttonContinue.png" />
+    <None Remove="img\Bingo3x3\buttonPlay.png" />
+    <None Remove="img\Bingo3x3\buttonStart.png" />
+    <None Remove="img\Bingo3x3\button_callBingo.png" />
+    <None Remove="img\Bingo3x3\img_control.png" />
+    <None Remove="img\Bingo3x3\menu.png" />
+    <None Remove="img\Bingo3x3\music1.png" />
+    <None Remove="img\Bingo3x3\music2.png" />
+    <None Remove="img\Bingo3x3\star.png" />
+    <None Remove="img\Bingo4x4\backgroundMain4x4.jpg" />
+    <None Remove="img\Bingo4x4\backgroundMenu.png" />
+    <None Remove="img\Bingo4x4\back_bingo44.png" />
+    <None Remove="img\Bingo4x4\back_mode.png" />
+    <None Remove="img\Bingo4x4\back_nv.png" />
+    <None Remove="img\Bingo4x4\back_tabInfo.png" />
+    <None Remove="img\Bingo4x4\buttonClose.png" />
+    <None Remove="img\Bingo4x4\buttonPlay.png" />
+    <None Remove="img\Bingo4x4\buttonStart.png" />
+    <None Remove="img\Bingo4x4\button_callBingo.png" />
+    <None Remove="img\Bingo4x4\img_control.png" />
+    <None Remove="img\Bingo4x4\menu.png" />
+    <None Remove="img\Bingo4x4\music1.png" />
+    <None Remove="img\Bingo4x4\music2.png" />
+    <None Remove="img\Bingo4x4\star.png" />
+    <None Remove="img\Bingo5x5\backgroundMain5x5.jpg" />
+    <None Remove="img\Bingo5x5\backgroundMenu.png" />
+    <None Remove="img\Bingo5x5\back_bingo55.png" />
+    <None Remove="img\Bingo5x5\back_mode.png" />
+    <None Remove="img\Bingo5x5\back_nv.png" />
+    <None Remove="img\Bingo5x5\back_tabInfo.jpg" />
+    <None Remove="img\Bingo5x5\back_tabInfo.png" />
+    <None Remove="img\Bingo5x5\buttonClose.png" />
+    <None Remove="img\Bingo5x5\buttonPlay.png" />
+    <None Remove="img\Bingo5x5\buttonStart.png" />
+    <None Remove="img\Bingo5x5\buttonStartNow.png" />
+    <None Remove="img\Bingo5x5\button_callBingo.png" />
+    <None Remove="img\Bingo5x5\img_control.png" />
+    <None Remove="img\Bingo5x5\menu.png" />
+    <None Remove="img\Bingo5x5\music1.png" />
+    <None Remove="img\Bingo5x5\music2.png" />
+    <None Remove="img\Bingo5x5\star.png" />
+    <None Remove="img\StartGame\backgroundHelp.jpg" />
+    <None Remove="img\StartGame\backgroundMenu.png" />
+    <None Remove="img\StartGame\backgroundStart.jpg" />
+    <None Remove="img\StartGame\buttonClose.png" />
+    <None Remove="img\StartGame\buttonStart.png" />
+    <None Remove="img\StartGame\logoStart.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icon.png" />
+    <Resource Include="img\Bingo3x3\backgroundMain3x3.jpg" />
+    <Resource Include="img\Bingo3x3\backgroundMenu.png" />
+    <Resource Include="img\Bingo3x3\back_bingo33.png" />
+    <Resource Include="img\Bingo3x3\back_mode.png" />
+    <Resource Include="img\Bingo3x3\back_nv.png" />
+    <Resource Include="img\Bingo3x3\back_tabInfo.png" />
+    <Resource Include="img\Bingo3x3\buttonClose.png" />
+    <Resource Include="img\Bingo3x3\buttonContinue.png" />
+    <Resource Include="img\Bingo3x3\buttonPlay.png" />
+    <Resource Include="img\Bingo3x3\buttonStart.png" />
+    <Resource Include="img\Bingo3x3\button_callBingo.png" />
+    <Resource Include="img\Bingo3x3\img_control.png" />
+    <Resource Include="img\Bingo3x3\menu.png" />
+    <Resource Include="img\Bingo3x3\music1.png" />
+    <Resource Include="img\Bingo3x3\music2.png" />
+    <Resource Include="img\Bingo3x3\star.png" />
+    <Resource Include="img\Bingo4x4\backgroundMain4x4.jpg" />
+    <Resource Include="img\Bingo4x4\backgroundMenu.png" />
+    <Resource Include="img\Bingo4x4\back_bingo44.png" />
+    <Resource Include="img\Bingo4x4\back_mode.png" />
+    <Resource Include="img\Bingo4x4\back_nv.png" />
+    <Resource Include="img\Bingo4x4\back_tabInfo.png" />
+    <Resource Include="img\Bingo4x4\buttonClose.png" />
+    <Resource Include="img\Bingo4x4\buttonPlay.png" />
+    <Resource Include="img\Bingo4x4\buttonStart.png" />
+    <Resource Include="img\Bingo4x4\button_callBingo.png" />
+    <Resource Include="img\Bingo4x4\img_control.png" />
+    <Resource Include="img\Bingo4x4\menu.png" />
+    <Resource Include="img\Bingo4x4\music1.png" />
+    <Resource Include="img\Bingo4x4\music2.png" />
+    <Resource Include="img\Bingo4x4\star.png" />
+    <Resource Include="img\Bingo5x5\backgroundMain5x5.jpg" />
+    <Resource Include="img\Bingo5x5\backgroundMenu.png" />
+    <Resource Include="img\Bingo5x5\back_bingo55.png" />
+    <Resource Include="img\Bingo5x5\back_mode.png" />
+    <Resource Include="img\Bingo5x5\back_nv.png" />
+    <Resource Include="img\Bingo5x5\back_tabInfo.png" />
+    <Resource Include="img\Bingo5x5\buttonClose.png" />
+    <Resource Include="img\Bingo5x5\buttonPlay.png" />
+    <Resource Include="img\Bingo5x5\buttonStart.png" />
+    <Resource Include="img\Bingo5x5\button_callBingo.png" />
+    <Resource Include="img\Bingo5x5\img_control.png" />
+    <Resource Include="img\Bingo5x5\menu.png" />
+    <Resource Include="img\Bingo5x5\music1.png" />
+    <Resource Include="img\Bingo5x5\music2.png" />
+    <Resource Include="img\Bingo5x5\star.png" />
+    <Resource Include="img\StartGame\backgroundHelp.jpg" />
+    <Resource Include="img\StartGame\backgroundMenu.png" />
+    <Resource Include="img\StartGame\backgroundStart.jpg" />
+    <Resource Include="img\StartGame\buttonClose.png" />
+    <Resource Include="img\StartGame\buttonStart.png" />
+    <Resource Include="img\StartGame\logoStart.png" />
+  </ItemGroup>
+
+</Project>

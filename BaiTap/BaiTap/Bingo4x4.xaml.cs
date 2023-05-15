@@ -218,15 +218,15 @@ namespace BaiTap
                 {
                     switch (Key)
                     {
-                        case "Easy":
+                        case "DỄ":
                             arr = listE[rd.Next(listE.Count)];
                             listE.Remove(arr);
                             break;
-                        case "Normal":
+                        case "TRUNG BÌNH":
                             arr = listN[rd.Next(listN.Count)];
                             listN.Remove(arr);
                             break;
-                        case "Hard":
+                        case "KHÓ":
                             arr = list[rd.Next(list.Count)];
                             list.Remove(arr);
                             break;
@@ -533,21 +533,21 @@ namespace BaiTap
         {
             switch (Key)
             {
-                case "Easy":
+                case "DỄ":
                     temp = listE2[rd.Next(listE2.Count)];
                     listLabel.Add("label" + temp);
                     tbShow.Text = temp;
                     listE2.Remove(temp);
                     listE2 = new List<string>(listE2);
                     break;
-                case "Normal":
+                case "TRUNG BÌNH":
                     temp = listN2[rd.Next(listN2.Count)];
                     listLabel.Add("label" + temp);
                     tbShow.Text = temp;
                     listN2.Remove(temp);
                     listN2 = new List<string>(listN2);
                     break;
-                case "Hard":
+                case "KHÓ":
                     temp = list2[rd.Next(list2.Count)];
                     listLabel.Add("label" + temp);
                     tbShow.Text = temp;
@@ -881,13 +881,13 @@ namespace BaiTap
             text.TextWrapping = TextWrapping.Wrap;
             switch (Key)
             {
-                case "Easy":
+                case "DỄ":
                     text.Text = MyString;
                     break;
-                case "Normal":
+                case "TRUNG BÌNH":
                     text.Text = MyString1;
                     break;
-                case "Hard":
+                case "KHÓ":
                     text.Text = MyString2;
                     break;
             }
@@ -1075,15 +1075,15 @@ namespace BaiTap
         {
             switch (Key)
             {
-                case "Easy":
+                case "DỄ":
                     number = 28;
                     checkBall = 27;
                     break;
-                case "Normal":
+                case "TRUNG BÌNH":
                     number = 34;
                     checkBall = 33;
                     break;
-                case "Hard":
+                case "KHÓ":
                     number = 40;
                     checkBall = 39;
                     break;

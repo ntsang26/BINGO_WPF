@@ -231,15 +231,15 @@ namespace BaiTap
                 {
                     switch (Key)
                     {
-                        case "Easy":
+                        case "DỄ":
                             arr = listE[rd.Next(listE.Count)];
                             listE.Remove(arr);
                             break;
-                        case "Normal":
+                        case "TRUNG BÌNH":
                             arr = listN[rd.Next(listN.Count)];
                             listN.Remove(arr);
                             break;
-                        case "Hard":
+                        case "KHÓ":
                             arr = list[rd.Next(list.Count)];
                             list.Remove(arr);
                             break;
@@ -579,21 +579,21 @@ namespace BaiTap
         {
             switch (Key)
             {
-                case "Easy":
+                case "DỄ":
                     temp = listE2[rd.Next(listE2.Count)];
                     listLabel.Add("label" + temp);
                     tbShow.Text = temp;
                     listE2.Remove(temp);
                     listE2 = new List<string>(listE2);
                     break;
-                case "Normal":
+                case "TRUNG BÌNH":
                     temp = listN2[rd.Next(listN2.Count)];
                     listLabel.Add("label" + temp);
                     tbShow.Text = temp;
                     listN2.Remove(temp);
                     listN2 = new List<string>(listN2);
                     break;
-                case "Hard":
+                case "KHÓ":
                     temp = list2[rd.Next(list2.Count)];
                     listLabel.Add("label" + temp);
                     tbShow.Text = temp;
@@ -780,13 +780,13 @@ namespace BaiTap
             text.TextWrapping = TextWrapping.Wrap;
             switch (Key)
             {
-                case "Easy":
+                case "DỄ":
                     text.Text = MyString;
                     break;
-                case "Normal":
+                case "TRUNG BÌNH":
                     text.Text = MyString1;
                     break;
-                case "Hard":
+                case "KHÓ":
                     text.Text = MyString2;
                     break;
             }
@@ -936,15 +936,7 @@ namespace BaiTap
                 margin1.Left = main.Width / 2 + buttonC.Width * 2 + 13;
                 buttonC.Margin = margin1;
                 Canvas.SetTop(buttonC, 30);
-                //
-                if(checkWin == true)
-                {
-                    button.Content = game1[i];
-                }
-                else
-                {
-                    button.Content = game[i];
-                }
+                button.Content = game1[i];
                 button.FontFamily = new FontFamily("Arial");
                 button.Foreground = Brushes.White;
                 button.FontSize = 18;
@@ -998,22 +990,6 @@ namespace BaiTap
                             mediaPlayer1.Play();
                             this.NavigationService.Navigate(new Bingo5x5(Key));
                             startTime(false);
-                        };
-                        break;
-                    case "NEXT LEVEL":
-                        button.Click += (sender, args) =>
-                        {
-                            if(Key == "Easy")
-                            {
-                                mediaPlayer1.Play();
-                                this.NavigationService.Navigate(new Bingo5x5("Normal"));
-                                startTime(false);
-                            }else if (Key == "Normal")
-                            {
-                                mediaPlayer1.Play();
-                                this.NavigationService.Navigate(new Bingo5x5("Hard"));
-                                startTime(false);
-                            }
                         };
                         break;
                     case "QUAY VỀ":
@@ -1146,15 +1122,15 @@ namespace BaiTap
             {
                 switch (Key)
                 {
-                    case "Easy":
+                    case "DỄ":
                         number = 38;
                         checkBall = 37;
                         break;
-                    case "Normal":
+                    case "TRUNG BÌNH":
                         number = 44;
                         checkBall = 43;
                         break;
-                    case "Hard":
+                    case "KHÓ":
                         number = 50;
                         checkBall = 49;
                         break;

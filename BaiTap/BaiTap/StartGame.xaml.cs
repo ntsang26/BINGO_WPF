@@ -28,7 +28,7 @@ namespace BaiTap
     /// </summary>
     public partial class StartGame : Page
     {
-        public string Path = "C:\\Users\\bogdev\\Desktop";
+        public string Path = "E:\\Code\\Visual Repo";
         public int gameType { get; set; }
         public StartGame()
         {
@@ -304,13 +304,13 @@ namespace BaiTap
                             mediaPlayer1.Play();
                             if(gameType == 1)
                             {
-                                this.NavigationService.Navigate(new Bingo3x3("Easy"));
+                                this.NavigationService.Navigate(new Bingo3x3("DỄ"));
                             }else if(gameType == 2)
                             {
-                                this.NavigationService.Navigate(new Bingo4x4("Easy"));
+                                this.NavigationService.Navigate(new Bingo4x4("DỄ"));
                             }else if(gameType == 3)
                             {
-                                this.NavigationService.Navigate(new Bingo5x5("Easy"));
+                                this.NavigationService.Navigate(new Bingo5x5("DỄ"));
                             }
                             startTime(false);
                         };
@@ -321,15 +321,15 @@ namespace BaiTap
                             mediaPlayer1.Play();
                             if (gameType == 1)
                             {
-                                this.NavigationService.Navigate(new Bingo3x3("Normal"));
+                                this.NavigationService.Navigate(new Bingo3x3("TRUNG BÌNH"));
                             }
                             else if (gameType == 2)
                             {
-                                this.NavigationService.Navigate(new Bingo4x4("Normal"));
+                                this.NavigationService.Navigate(new Bingo4x4("TRUNG BÌNH"));
                             }
                             else if (gameType == 3)
                             {
-                                this.NavigationService.Navigate(new Bingo5x5("Normal"));
+                                this.NavigationService.Navigate(new Bingo5x5("TRUNG BÌNH"));
                             }
                             startTime(false);
 
@@ -341,15 +341,15 @@ namespace BaiTap
                             mediaPlayer1.Play();
                             if (gameType == 1)
                             {
-                                this.NavigationService.Navigate(new Bingo3x3("Hard"));
+                                this.NavigationService.Navigate(new Bingo3x3("KHÓ"));
                             }
                             else if (gameType == 2)
                             {
-                                this.NavigationService.Navigate(new Bingo4x4("Hard"));
+                                this.NavigationService.Navigate(new Bingo4x4("KHÓ"));
                             }
                             else if (gameType == 3)
                             {
-                                this.NavigationService.Navigate(new Bingo5x5("Hard"));
+                                this.NavigationService.Navigate(new Bingo5x5("KHÓ"));
                             }
                             startTime(false);
                         };

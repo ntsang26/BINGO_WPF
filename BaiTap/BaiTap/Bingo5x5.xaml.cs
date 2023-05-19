@@ -218,9 +218,9 @@ namespace BaiTap
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public MediaPlayer mediaPlayer = new MediaPlayer();
-        public string MyString = "     Chế độ 5x5 dễ gồm số từ 1 đến 45 và chỉ có 38 số trong 45 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 38 số đó.";
-        public string MyString1 = "     Chế độ 5x5 thường gồm số từ 1 đến 60 và chỉ có 44 số trong 60 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 44 số đó.";
-        public string MyString2 = "     Chế độ 5x5 khó gồm số từ 1 đến 75 và chỉ có 50 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 50 số đó.";
+        public string MyString = "     Chế độ 5x5 - Dễ gồm số từ 1 đến 45 và chỉ có 38 số trong 45 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 38 số đó.";
+        public string MyString1 = "     Chế độ 5x5 - Thường gồm số từ 1 đến 60 và chỉ có 44 số trong 60 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 44 số đó.";
+        public string MyString2 = "     Chế độ 5x5 - Khó gồm số từ 1 đến 75 và chỉ có 50 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 50 số đó.";
 
         // Create thẻ Bingo + checkWin
         public void cardGame()

@@ -101,7 +101,7 @@ namespace BaiTap
 
         public MediaPlayer mediaPlayer = new MediaPlayer();
 
-        public string MyString = "Trong mỗi chế độ 3x3, 4x4, 5x5 sẽ có số lượng giới hạn số nhất định, bạn cần tìm những con số đó trùng với số trong phiếu của bạn. Sau khi hết số hệ thống sẽ kiểm tra và cho biết bạn có thắng hay không, nếu bạn chơi 3x3 hoặc 5x5 thì bạn cần tối thiểu 1 hàng ngang, 1 hàng dọc hoặc 1 đường chéo còn 4x4 thì chỉ cần tối thiểu 1 hàng hàng hoặc 1 hàng dọc.";
+        public string MyString = "Trong mỗi chế độ 3x3, 4x4, 5x5 sẽ có số lượng giới hạn số nhất định, bạn cần tìm những con số đó trùng với số trong phiếu của bạn. Sau khi hết số hệ thống sẽ kiểm tra và cho biết bạn có thắng hay không, nếu bạn chơi 3x3 hoặc 5x5 thì bạn cần tối thiểu 1 hàng ngang, 1 hàng dọc hoặc 1 đường chéo còn 4x4 thì chỉ cần tối thiểu 1 hàng ngang hoặc 1 hàng dọc.";
         // Tab Hướng dẫn
         public void Help()
         {
@@ -202,7 +202,7 @@ namespace BaiTap
             canvas.Height = 500;
             canvas.Width = 850;
             ImageBrush myBrush1 = new ImageBrush();
-            myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/backgroundMenu.png"));
+            myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/backgroundMenu.png"));
             canvas.Background = myBrush1;
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
@@ -266,10 +266,10 @@ namespace BaiTap
                 MainWindow main = new MainWindow();
                 buttonC.Height = 60;
                 var margin1 = buttonC.Margin;
-                margin1.Top = 40;
-                margin1.Left = main.Width / 2 + buttonC.Width * 2 + 13;
+                margin1.Top = 50;
+                margin1.Left = main.Width / 2 + buttonC.Width * 2 - 20;
                 buttonC.Margin = margin1;
-                Canvas.SetTop(buttonC, 30);
+               Canvas.SetTop(buttonC, 30);
                 //
                 button.Content = gameMode[i];
                 button.FontFamily = new FontFamily("Arial");
@@ -365,7 +365,7 @@ namespace BaiTap
             canvas.Height = 500;
             canvas.Width = 850;
             ImageBrush myBrush1 = new ImageBrush();
-            myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/StartGame/backgroundMenu.png"));
+            myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/backgroundMenu.png"));
             canvas.Background = myBrush1;
             
             MediaPlayer mediaPlayer1 = new MediaPlayer();
@@ -429,8 +429,8 @@ namespace BaiTap
                 MainWindow main = new MainWindow();
                 buttonC.Height = 60;
                 var margin1 = buttonC.Margin;
-                margin1.Top = 40;
-                margin1.Left = main.Width / 2 + buttonC.Width * 2 + 13;
+                margin1.Top = 50;
+                margin1.Left = main.Width / 2 + buttonC.Width * 2 - 20;
                 buttonC.Margin = margin1;
                 Canvas.SetTop(buttonC, 30);
                 //

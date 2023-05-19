@@ -200,9 +200,9 @@ namespace BaiTap
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public MediaPlayer mediaPlayer = new MediaPlayer();
-        public string MyString = "     Chế độ 3x3 dễ gồm số từ 1 đến 25 và chỉ có 18 số trong 25 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 18 số đó.";
-        public string MyString1 = "     Chế độ 3x3 thường gồm số từ 1 đến 40 và chỉ có 24 số trong 40 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 24 số đó.";
-        public string MyString2 = "     Chế độ 3x3 khó gồm số từ 1 đến 75 và chỉ có 30 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 30 số đó.";
+        public string MyString = "     Chế độ 3x3 - Dễ gồm số từ 1 đến 25 và chỉ có 18 số trong 25 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 18 số đó.";
+        public string MyString1 = "     Chế độ 3x3 - Thường gồm số từ 1 đến 40 và chỉ có 24 số trong 40 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 24 số đó.";
+        public string MyString2 = "     Chế độ 3x3 - Khó gồm số từ 1 đến 75 và chỉ có 30 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 30 số đó.";
 
         public string arr = "";
         Random rd = new Random();

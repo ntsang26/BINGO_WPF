@@ -205,9 +205,9 @@ namespace BaiTap
         public int checkRoll = 1;
         public int checkBall;
         public bool checkWin = false;
-        public string MyString = "     Chế độ 4x4 dễ gồm số từ 1 đến 35 và chỉ có 28 số trong 35 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 28 số đó.";
-        public string MyString1 = "     Chế độ 4x4 thường gồm số từ 1 đến 50 và chỉ có 44 số trong 50 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 44 số đó.";
-        public string MyString2 = "     Chế độ 4x4 khó gồm số từ 1 đến 75 và chỉ có 50 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 50 số đó.";
+        public string MyString = "     Chế độ 4x4 - Dễ gồm số từ 1 đến 35 và chỉ có 28 số trong 35 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 28 số đó.";
+        public string MyString1 = "     Chế độ 4x4 - Thường gồm số từ 1 đến 50 và chỉ có 44 số trong 50 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 44 số đó.";
+        public string MyString2 = "     Chế độ 4x4 - Khó gồm số từ 1 đến 75 và chỉ có 50 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 50 số đó.";
 
         // Create thẻ Bingo và CheckWin
         public void cardGame()

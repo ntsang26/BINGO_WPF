@@ -75,6 +75,7 @@
     <None Remove="img\StartGame\logoStart.png" />
     <None Remove="img\ui_img\A.png" />
     <None Remove="img\ui_img\ad.png" />
+    <None Remove="img\ui_img\backgroundMenu.png" />
     <None Remove="img\ui_img\BG_home.png" />
     <None Remove="img\ui_img\boder_character.png" />
     <None Remove="img\ui_img\btn-getnow.png" />
@@ -245,6 +246,7 @@
     <Resource Include="img\StartGame\logoStart.png" />
     <Resource Include="img\ui_img\A.png" />
     <Resource Include="img\ui_img\ad.png" />
+    <Resource Include="img\ui_img\backgroundMenu.png" />
     <Resource Include="img\ui_img\BG_home.png" />
     <Resource Include="img\ui_img\boder_character.png" />
     <Resource Include="img\ui_img\btn-getnow.png" />

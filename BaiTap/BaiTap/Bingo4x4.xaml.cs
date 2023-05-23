@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.IO.Packaging;
-using System.Windows.Media.Animation;
 
 
 namespace BaiTap
@@ -205,9 +195,9 @@ namespace BaiTap
         public int checkRoll = 1;
         public int checkBall;
         public bool checkWin = false;
-        public string MyString = "     Chế độ 4x4 - Dễ gồm số từ 1 đến 35 và chỉ có 25 số trong 35 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 25 số đó.";
-        public string MyString1 = "     Chế độ 4x4 - Thường gồm số từ 1 đến 50 và chỉ có 30 số trong 50 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 30 số đó.";
-        public string MyString2 = "     Chế độ 4x4 - Khó gồm số từ 1 đến 75 và chỉ có 35 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 35 số đó.";
+        public string MyString = "     Chế độ 4x4 - Dễ gồm số từ 1 đến 35 và chỉ có 28 số trong 35 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 28 số đó.";
+        public string MyString1 = "     Chế độ 4x4 - Thường gồm số từ 1 đến 50 và chỉ có 35 số trong 50 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 35 số đó.";
+        public string MyString2 = "     Chế độ 4x4 - Khó gồm số từ 1 đến 75 và chỉ có 40 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 40 số đó.";
 
         // Create thẻ Bingo và CheckWin
         public void cardGame()
@@ -230,7 +220,7 @@ namespace BaiTap
                             arr = list[rd.Next(list.Count)];
                             list.Remove(arr);
                             break;
-                    }; 
+                    };
                     Button button = new Button();
                     Button button1 = new Button();
                     button.Name = "btn" + index;
@@ -397,7 +387,7 @@ namespace BaiTap
                     tbCount.TextAlignment = TextAlignment.Center;
                     canvasCountDown.Children.Add(tbCount);
                 }
-                
+
                 Label label = new Label();
                 label.FontFamily = new FontFamily("Roboto");
                 label.Name = "label" + i;
@@ -938,7 +928,7 @@ namespace BaiTap
                     autoNum(true);
                     checkNum(true);
                 }
-                grid4x4.Children.Remove(canvas);        
+                grid4x4.Children.Remove(canvas);
             };
             buttonC.Width = 120;
             MainWindow main = new MainWindow();
@@ -1076,16 +1066,16 @@ namespace BaiTap
             switch (Key)
             {
                 case "DỄ":
-                    number = 25;
-                    checkBall = 24;
+                    number = 28;
+                    checkBall = 27;
                     break;
                 case "TRUNG BÌNH":
-                    number = 30;
-                    checkBall = 29;
-                    break;
-                case "KHÓ":
                     number = 35;
                     checkBall = 34;
+                    break;
+                case "KHÓ":
+                    number = 40;
+                    checkBall = 39;
                     break;
             };
             if (checkTime == true)

@@ -1,24 +1,11 @@
-﻿using Accessibility;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.IO.Packaging;
 
 
 namespace BaiTap
@@ -39,8 +26,8 @@ namespace BaiTap
             this.Background = imageBrush;
             Key = mess;
         }
-        
-        public string[,] StringArray = new string[3,3];
+
+        public string[,] StringArray = new string[3, 3];
         public List<string> list = new List<string>
         {
             "1", "2", "3", "4", "5",
@@ -59,7 +46,7 @@ namespace BaiTap
             "66", "67", "68", "69", "70",
             "71", "72", "73", "74", "75",
         };
-         public List<string> listN = new List<string>
+        public List<string> listN = new List<string>
         {
             "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "10",
@@ -201,7 +188,7 @@ namespace BaiTap
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public MediaPlayer mediaPlayer = new MediaPlayer();
         public string MyString = "     Chế độ 3x3 - Dễ gồm số từ 1 đến 25 và chỉ có 18 số trong 25 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 18 số đó.";
-        public string MyString1 = "     Chế độ 3x3 - Thường gồm số từ 1 đến 40 và chỉ có 20 số trong 40 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 20 số đó.";
+        public string MyString1 = "     Chế độ 3x3 - Thường gồm số từ 1 đến 40 và chỉ có 24 số trong 40 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 24 số đó.";
         public string MyString2 = "     Chế độ 3x3 - Khó gồm số từ 1 đến 75 và chỉ có 30 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 30 số đó.";
 
         public string arr = "";
@@ -211,7 +198,7 @@ namespace BaiTap
         public int checkBall;
         public int checkRoll = 1;
         public bool checkWin = false;
-        
+
         // Thẻ Bingo + checkWin
         public void cardGame()
         {
@@ -219,7 +206,7 @@ namespace BaiTap
             for (var i = 0; i < 3; i++)
             {
                 for (var j = 0; j < 3; j++)
-                {  
+                {
                     Button button = new Button();
                     Button button1 = new Button();
                     TextBlock tb = new TextBlock();
@@ -231,65 +218,41 @@ namespace BaiTap
                     tb.FontSize = 20;
                     tb.VerticalAlignment = VerticalAlignment.Center;
                     tb.Height = 60;
-                   
-                    if (i == 1 && j == 1)
-                    {
-                  
-                        Grid.SetColumn(tb, i);
-                        Grid.SetRow(tb, j);
-                        grid_button.Children.Add(tb);
-                        index++;
-                        //
-                    }
-                    else
-                    {
-                        switch (Key)
-                        {
-                            case "DỄ":
-                                arr = listE[rd.Next(listE.Count)];
-                                listE.Remove(arr);
-                                break;
-                            case "TRUNG BÌNH":
-                                arr = listN[rd.Next(listN.Count)];
-                                listN.Remove(arr);
-                                break;
-                            case "KHÓ":
-                                arr = list[rd.Next(list.Count)];
-                                list.Remove(arr);
-                                break;
-                        };
-                        button.Content = arr;
-                        listButton.Add("label"+button.Content);
-                        button.Background = null;
-                        Grid.SetColumn(button, i);
-                        Grid.SetRow(button, j);
-                        var margin = button.Margin;                   
-                        margin.Top = 1;                  
-                        margin.Left = 12;
-                        margin.Right = 6;
-                        margin.Bottom = 8;            
-                        button.Margin = margin;
-                        grid_button.Children.Add(button);
-                        
-                        canvasControl.Children.Add(button1);
-                        for (var r = 0; r < 3; r++)
-                        {
-                            for (var c = 0; c < 3; c++)
-                            {
-                                if (r == 1 && c == 1)
-                                {
-                                    StringArray[1, 1] = "*";
-                                }
-                                else
-                                {
-                                    StringArray[i, j] = "label"+button.Content;
-                                }
-                            }
-                        }
 
-                        button.Click += (sender, args) =>
+                    switch (Key)
+                    {
+                        case "DỄ":
+                            arr = listE[rd.Next(listE.Count)];
+                            listE.Remove(arr);
+                            break;
+                        case "TRUNG BÌNH":
+                            arr = listN[rd.Next(listN.Count)];
+                            listN.Remove(arr);
+                            break;
+                        case "KHÓ":
+                            arr = list[rd.Next(list.Count)];
+                            list.Remove(arr);
+                            break;
+                    };
+                    button.Content = arr;
+                    listButton.Add("label" + button.Content);
+                    button.Background = null;
+                    Grid.SetColumn(button, i);
+                    Grid.SetRow(button, j);
+                    var margin = button.Margin;
+                    margin.Top = 1;
+                    margin.Left = 12;
+                    margin.Right = 6;
+                    margin.Bottom = 8;
+                    button.Margin = margin;
+                    grid_button.Children.Add(button);
+
+                    canvasControl.Children.Add(button1);
+                    StringArray[i, j] = "label" + button.Content;
+
+                    button.Click += (sender, args) =>
                         {
-                            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\buttonGame.mp3"));
+                            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\buttonGame.mp3"));
                             mediaPlayer1.Play();
                             ImageBrush myBrush1 = new ImageBrush();
                             foreach (var value in listCorect)
@@ -311,10 +274,10 @@ namespace BaiTap
                                 }
                                 else
                                 {
-                                   
+
                                 }
                             }
-                            
+
 
                             int count1 = 0;
                             int count2 = 0;
@@ -374,13 +337,11 @@ namespace BaiTap
                             }
 
                         };
-                        index++;
-
-                    }
+                    index++;
                     list.Remove(arr);
                 }
             }
-            
+
         }
 
         // Kiểm tra số đã xuất hiện + Đếm số còn lại + tạo bảng số
@@ -415,7 +376,7 @@ namespace BaiTap
                 label.BorderBrush = new SolidColorBrush(Colors.Black);
                 var padding = label.Padding;
                 padding.Top = 5;
-                if(i >= 1 && i <= 9)
+                if (i >= 1 && i <= 9)
                 {
                     padding.Left = 9;
                     padding.Right = 9;
@@ -474,7 +435,7 @@ namespace BaiTap
                     }
                     else
                     {
-                        label.BorderThickness = new Thickness(1, 0, 0,1);
+                        label.BorderThickness = new Thickness(1, 0, 0, 1);
                     }
                 }
                 if (i >= 61 && i <= 75)
@@ -490,41 +451,46 @@ namespace BaiTap
                         label.BorderThickness = new Thickness(1, 0, 1, 1);
                     }
                 }
-                
+
                 label.FontWeight = FontWeights.Bold;
                 for (int j = 0; j < listLabel.Count; ++j)
                 {
                     if ("label" + i == listLabel[j])
                     {
-                        if(i >= 1 && i <= 15)
+                        if (i >= 1 && i <= 15)
                         {
                             label.Background = Brushes.DarkRed;
                             label.Foreground = Brushes.White;
-                            
-                        }else if (i >= 16 && i<=30){
+
+                        }
+                        else if (i >= 16 && i <= 30)
+                        {
                             label.Background = Brushes.DarkOrange;
                             label.Foreground = Brushes.White;
-                            
-                        }else if (i>= 31 && i <= 45)
+
+                        }
+                        else if (i >= 31 && i <= 45)
                         {
                             label.Background = Brushes.DarkBlue;
                             label.Foreground = Brushes.White;
-                            
-                        }else if (i >= 46 && i<=60)
+
+                        }
+                        else if (i >= 46 && i <= 60)
                         {
                             label.Background = Brushes.DarkGreen;
                             label.Foreground = Brushes.White;
-                            
-                        }else if(i>=61 && i<= 75)
+
+                        }
+                        else if (i >= 61 && i <= 75)
                         {
                             label.Background = Brushes.Purple;
                             label.Foreground = Brushes.White;
-                            
+
                         }
-                        
-                         listCorect.Add(label.Name);
-                            
-                        
+
+                        listCorect.Add(label.Name);
+
+
                     }
                 }
             }
@@ -567,13 +533,13 @@ namespace BaiTap
         {
             if (what == true)
             {
-                mediaPlayer.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\musicMap33.mp3"));
+                mediaPlayer.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\musicMap33.mp3"));
                 mediaPlayer.Play();
                 timer.Interval = new TimeSpan(0, 4, 0);
                 timer.Tick += (sender, args) =>
                 {
                     mediaPlayer.Stop();
-                    mediaPlayer.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\musicMap33.mp3"));
+                    mediaPlayer.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\musicMap33.mp3"));
                     mediaPlayer.Play();
                 };
                 timer.Start();
@@ -626,7 +592,7 @@ namespace BaiTap
             //
             Button buttonC = new Button();
             ImageBrush myBrushButtonC = new ImageBrush();
-            if(check == true)
+            if (check == true)
             {
                 myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/yes_button.png"));
             }
@@ -634,7 +600,7 @@ namespace BaiTap
             {
                 myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo3x3/buttonContinue.png"));
             }
-            
+
             // Create a new style for the button
             Style myButtonStyleC = new Style(typeof(Button));
 
@@ -660,7 +626,7 @@ namespace BaiTap
                     checkNum(true);
                 }
                 grid3x3.Children.Remove(canvas);
-                
+
             };
             buttonC.Width = 120;
             MainWindow main = new MainWindow();
@@ -695,7 +661,7 @@ namespace BaiTap
             canvas.Background = myBrush1;
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             //
             for (var i = 0; i < 3; i++)
             {
@@ -750,7 +716,7 @@ namespace BaiTap
                 {
                     mediaPlayer1.Play();
                     grid3x3.Children.Remove(canvas);
-                };  
+                };
                 buttonC.Width = 60;
                 MainWindow main = new MainWindow();
                 buttonC.Height = 60;
@@ -833,7 +799,7 @@ namespace BaiTap
             canvas.Background = myBrush1;
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             //
             for (var i = 0; i < 2; i++)
             {
@@ -922,15 +888,15 @@ namespace BaiTap
                 textblock.FontWeight = FontWeights.Bold;
                 textblock.TextAlignment = TextAlignment.Center;
                 Canvas.SetTop(textblock, 150);
-                Canvas.SetLeft(textblock, main.Width /2 - textblock.Width /2);
+                Canvas.SetLeft(textblock, main.Width / 2 - textblock.Width / 2);
                 canvas.Children.Add(textblock);
                 if (i == 0)
                 {
-                    Canvas.SetTop(button, index1[i+1] - 100);
+                    Canvas.SetTop(button, index1[i + 1] - 100);
                 }
                 else if (i == 1)
                 {
-                    Canvas.SetTop(button, index1[i+1] - 100);
+                    Canvas.SetTop(button, index1[i + 1] - 100);
                 }
                 else if (i == 2)
                 {
@@ -974,7 +940,7 @@ namespace BaiTap
         {
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             ImageBrush myBrushButtonT = new ImageBrush();
             ImageBrush myBrushButtonF = new ImageBrush();
             ImageBrush myBrushButtonMenu = new ImageBrush();
@@ -1013,9 +979,9 @@ namespace BaiTap
             buttonMusicF.Margin = margin;
             buttonMusicT.Margin = margin;
             buttonMusicMenu.Margin = margin;
-            buttonMusicT.Cursor = Cursors.Hand; 
-            buttonMusicF.Cursor = Cursors.Hand; 
-            buttonMusicMenu.Cursor = Cursors.Hand; 
+            buttonMusicT.Cursor = Cursors.Hand;
+            buttonMusicF.Cursor = Cursors.Hand;
+            buttonMusicMenu.Cursor = Cursors.Hand;
             buttonMusicF.Style = myButtonStyleF;
             buttonMusicT.Style = myButtonStyleT;
             buttonMusicMenu.Style = myButtonStyleMenu;
@@ -1046,27 +1012,27 @@ namespace BaiTap
             };
 
         }
-       
+
         // Set Style Button Call Bingo
         public void Controler()
         {
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             ImageBrush myBrushButtonC = new ImageBrush();
             myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo3x3/button_callBingo.png"));
             Style myButtonStyleC = new Style(typeof(Button));
             ControlTemplate myButtonTemplate1 = new ControlTemplate(typeof(Button));
             FrameworkElementFactory borderFactory1 = new FrameworkElementFactory(typeof(Border));
             borderFactory1.SetValue(Border.BackgroundProperty, myBrushButtonC);
-            myButtonTemplate1.VisualTree = borderFactory1;           
+            myButtonTemplate1.VisualTree = borderFactory1;
             myButtonStyleC.Setters.Add(new Setter(Button.TemplateProperty, myButtonTemplate1));
-            Button buttonCall = new Button();         
+            Button buttonCall = new Button();
             buttonCall.Height = 40;
-            buttonCall.Width = 120;          
+            buttonCall.Width = 120;
             Canvas.SetBottom(buttonCall, -15);
             Canvas.SetLeft(buttonCall, 80);
-            buttonCall.Style = myButtonStyleC;       
-            canvasGame.Children.Add(buttonCall);           
+            buttonCall.Style = myButtonStyleC;
+            canvasGame.Children.Add(buttonCall);
             buttonCall.Cursor = Cursors.Hand;
             buttonCall.Click += (sender, args) =>
             {
@@ -1074,7 +1040,7 @@ namespace BaiTap
                 tabResult();
                 autoNum(false);
             };
-            
+
         }
 
         // Tự động rand Số + Tính số còn lại
@@ -1087,8 +1053,8 @@ namespace BaiTap
                     checkBall = 17;
                     break;
                 case "TRUNG BÌNH":
-                    number = 20;
-                    checkBall = 19;
+                    number = 24;
+                    checkBall = 14;
                     break;
                 case "KHÓ":
                     number = 30;
@@ -1107,7 +1073,7 @@ namespace BaiTap
                     wrap4.Children.RemoveRange(0, wrap4.Children.Count);
                     wrap5.Children.RemoveRange(0, wrap5.Children.Count);
                     canvasCountDown.Children.RemoveRange(0, canvasCountDown.Children.Count);
-                    if(checkBall < 0)
+                    if (checkBall < 0)
                     {
 
                     }

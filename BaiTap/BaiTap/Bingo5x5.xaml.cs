@@ -1,21 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.IO.Packaging;
-using System.Security.Cryptography.Pkcs;
-using System.Windows.Media.Animation;
 
 namespace BaiTap
 {
@@ -31,11 +21,11 @@ namespace BaiTap
         {
             InitializeComponent();
             ImageBrush imageBrush = new ImageBrush();
-            imageBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/background5x5.jpg"));
+            imageBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo5x5/backgroundMain5x5.jpg"));
             this.Background = imageBrush;
             Key = key;
         }
-        public string[,] StringArray = new string[5,5];
+        public string[,] StringArray = new string[5, 5];
 
         public List<string> list = new List<string>
         {
@@ -207,7 +197,7 @@ namespace BaiTap
         };
 
         MediaPlayer mediaPlayer1 = new MediaPlayer();
-        
+
         public string arr = "";
         Random rd = new Random();
         public int index = 1;
@@ -218,9 +208,9 @@ namespace BaiTap
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public MediaPlayer mediaPlayer = new MediaPlayer();
-        public string MyString = "     Chế độ 5x5 - Dễ gồm số từ 1 đến 45 và chỉ có 30 số trong 45 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 30 số đó.";
-        public string MyString1 = "     Chế độ 5x5 - Thường gồm số từ 1 đến 60 và chỉ có 35 số trong 60 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 35 số đó.";
-        public string MyString2 = "     Chế độ 5x5 - Khó gồm số từ 1 đến 75 và chỉ có 35 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 35 số đó.";
+        public string MyString = "     Chế độ 5x5 - Dễ gồm số từ 1 đến 45 và chỉ có 38 số trong 45 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 38 số đó.";
+        public string MyString1 = "     Chế độ 5x5 - Thường gồm số từ 1 đến 60 và chỉ có 44 số trong 60 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 44 số đó.";
+        public string MyString2 = "     Chế độ 5x5 - Khó gồm số từ 1 đến 75 và chỉ có 40 số trong 75 số được chọn, bạn cần tìm các số trong thẻ Bingo trùng với 1 trong 40 số đó.";
 
         // Create thẻ Bingo + checkWin
         public void cardGame()
@@ -256,163 +246,134 @@ namespace BaiTap
                     tb.VerticalAlignment = VerticalAlignment.Center;
                     tb.Height = 60;
 
-                    if (i == 2 && j == 2)
+                    button.Content = arr;
+                    listButton.Add("label" + button.Content);
+                    button.Background = null;
+                    Grid.SetColumn(button, i);
+                    Grid.SetRow(button, j);
+                    var margin = button.Margin;
+                    margin.Top = 9;
+                    margin.Left = 9;
+                    margin.Right = 9;
+                    margin.Bottom = 9;
+                    button.Margin = margin;
+                    grid_button.Children.Add(button);
+
+                    canvasControl.Children.Add(button1);
+
+                    StringArray[i, j] = "label" + button.Content;
+
+                    button.Click += (sender, args) =>
                     {
-
-                        Grid.SetColumn(tb, i);
-                        Grid.SetRow(tb, j);
-                        grid_button.Children.Add(tb);
-                        index++;
-                        //
-
-
-                    }
-                    else
-                    {
-                        button.Content = arr;
-                        listButton.Add("label" + button.Content);
-                        button.Background = null;
-                        Grid.SetColumn(button, i);
-                        Grid.SetRow(button, j);
-                        var margin = button.Margin;
-                        margin.Top = 9;
-                        margin.Left = 9;
-                        margin.Right = 9;
-                        margin.Bottom = 9;
-                        button.Margin = margin;
-                        grid_button.Children.Add(button);
-
-                        canvasControl.Children.Add(button1);
-                        for (var r = 0; r < 5; r++)
+                        mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\buttonGame.mp3"));
+                        mediaPlayer1.Play();
+                        ImageBrush myBrush1 = new ImageBrush();
+                        foreach (var value in listCorect)
                         {
-                            for (var c = 0; c < 5; c++)
+                            if (value == "label" + button.Content)
                             {
-                                if (r == 1 && c == 1)
+                                myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/Star_vote.png"));
+                                button.Background = myBrush1;
+                                for (var m = 0; m < 5; m++)
                                 {
-                                    StringArray[2, 2] = "*";
-                                }
-                                else
-                                {
-                                    StringArray[i, j] = "label" + button.Content;
-                                }
-                            }
-                        }
-
-                        button.Click += (sender, args) =>
-                        {
-                            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\buttonGame.mp3"));
-                            mediaPlayer1.Play();
-                            ImageBrush myBrush1 = new ImageBrush();
-                            foreach (var value in listCorect)
-                            {
-                                if (value == "label" + button.Content)
-                                {
-                                    myBrush1.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/Star_vote.png"));
-                                    button.Background = myBrush1;
-                                    for (var m = 0; m < 5; m++)
+                                    for (var n = 0; n < 5; n++)
                                     {
-                                        for (var n = 0; n < 5; n++)
+                                        if (StringArray[m, n] == "label" + button.Content)
                                         {
-                                            if (StringArray[m, n] == "label" + button.Content)
-                                            {
-                                                StringArray[m, n] = "*";
-                                            }
+                                            StringArray[m, n] = "*";
                                         }
                                     }
                                 }
-                                else
-                                {
-
-                                }
                             }
-
-
-                            int count1 = 0;
-                            int count2 = 0;
-                            int count3 = 0;
-                            int count4 = 0;
-                            int count5 = 0;
-                            int count6 = 0;
-                            int count7 = 0;
-                            int count8 = 0;
-                            int count9 = 0;
-                            int count10 = 0;
-                            int count11 = 0;
-                            int count12 = 0;
-                            for (var i = 0; i < 5; ++i)
+                            else
                             {
-                                for (var j = 0; j < 5; ++j)
-                                {
-                                    if (StringArray[i, j] == "*" && i == 0)
-                                    {
-                                        count1++;
-                                    }
-                                    if (StringArray[i, j] == "*" && i == 1)
-                                    {
-                                        count2++;
-                                    }
-                                    if (StringArray[i, j] == "*" && i == 2)
-                                    {
-                                        count3++;
-                                    }
-                                    if (StringArray[i, j] == "*" && i == 3)
-                                    {
-                                        count9++;
-                                    }
-                                    if (StringArray[i, j] == "*" && i == 4)
-                                    {
-                                        count10++;
-                                    }
-                                    if (StringArray[i, j] == "*" && j == 0)
-                                    {
-                                        count4++;
-                                    }
-                                    if (StringArray[i, j] == "*" && j == 1)
-                                    {
-                                        count5++;
-                                    }
-                                    if (StringArray[i, j] == "*" && j == 2)
-                                    {
-                                        count6++;
-                                    }
-                                    if (StringArray[i, j] == "*" && j == 3)
-                                    {
-                                        count7++;
-                                    }
-                                    if (StringArray[i, j] == "*" && j == 4)
-                                    {
-                                        count8++;
-                                    }
-                                    if (StringArray[i, j] == "*" && i == j)
-                                    {
-                                        count11++;
-                                    }
 
-                                    if ((StringArray[i, j] == "*" && (i == 1 && j == 3))
-                                    || (StringArray[i, j] == "*" && (i == 2 && j == 0))
-                                    || (StringArray[i, j] == "*" && (i == 0 && j == 4))
-                                    || (StringArray[i, j] == "*" && (i == 3 && j == 1))
-                                    || (StringArray[i, j] == "*" && (i == 4 && j == 0)))
-                                    {
-                                        count12++;
-                                    }
-
-
-                                }
                             }
-                            if (count1 == 5 || count2 == 5 || count3 == 5
-                                || count4 == 5 || count5 == 5 || count6 == 5
-                                    || count7 == 5 || count8 == 5
-                                        || count9 == 5 || count10 == 5
-                                            || count11 == 5 || count12 == 5)  
+                        }
+                        int count1 = 0;
+                        int count2 = 0;
+                        int count3 = 0;
+                        int count4 = 0;
+                        int count5 = 0;
+                        int count6 = 0;
+                        int count7 = 0;
+                        int count8 = 0;
+                        int count9 = 0;
+                        int count10 = 0;
+                        int count11 = 0;
+                        int count12 = 0;
+                        for (var i = 0; i < 5; ++i)
+                        {
+                            for (var j = 0; j < 5; ++j)
                             {
-                                checkWin = true;
+                                if (StringArray[i, j] == "*" && i == 0)
+                                {
+                                    count1++;
+                                }
+                                if (StringArray[i, j] == "*" && i == 1)
+                                {
+                                    count2++;
+                                }
+                                if (StringArray[i, j] == "*" && i == 2)
+                                {
+                                    count3++;
+                                }
+                                if (StringArray[i, j] == "*" && i == 3)
+                                {
+                                    count9++;
+                                }
+                                if (StringArray[i, j] == "*" && i == 4)
+                                {
+                                    count10++;
+                                }
+                                if (StringArray[i, j] == "*" && j == 0)
+                                {
+                                    count4++;
+                                }
+                                if (StringArray[i, j] == "*" && j == 1)
+                                {
+                                    count5++;
+                                }
+                                if (StringArray[i, j] == "*" && j == 2)
+                                {
+                                    count6++;
+                                }
+                                if (StringArray[i, j] == "*" && j == 3)
+                                {
+                                    count7++;
+                                }
+                                if (StringArray[i, j] == "*" && j == 4)
+                                {
+                                    count8++;
+                                }
+                                if (StringArray[i, j] == "*" && i == j)
+                                {
+                                    count11++;
+                                }
+
+                                if ((StringArray[i, j] == "*" && (i == 1 && j == 3))
+                                || (StringArray[i, j] == "*" && (i == 2 && j == 0))
+                                || (StringArray[i, j] == "*" && (i == 0 && j == 4))
+                                || (StringArray[i, j] == "*" && (i == 3 && j == 1))
+                                || (StringArray[i, j] == "*" && (i == 4 && j == 0)))
+                                {
+                                    count12++;
+                                }
+
+
                             }
+                        }
+                        if (count1 == 5 || count2 == 5 || count3 == 5
+                            || count4 == 5 || count5 == 5 || count6 == 5
+                                || count7 == 5 || count8 == 5
+                                    || count9 == 5 || count10 == 5
+                                        || count11 == 5 || count12 == 5)
+                        {
+                            checkWin = true;
+                        }
 
-                        };
-                        index++;
-
-                    }
+                    };
+                    index++;
                     list.Remove(arr);
                 }
             }
@@ -424,7 +385,7 @@ namespace BaiTap
         {
             for (int i = 1; i <= list3.Count; ++i)
             {
-                if(temp == true)
+                if (temp == true)
                 {
                     TextBlock tbCount = new TextBlock();
                     if (checkBall < 0)
@@ -443,7 +404,7 @@ namespace BaiTap
                     tbCount.TextAlignment = TextAlignment.Center;
                     canvasCountDown.Children.Add(tbCount);
                 }
-                
+
                 Label label = new Label();
                 label.FontFamily = new FontFamily("Roboto");
                 label.Name = "label" + i;
@@ -601,20 +562,20 @@ namespace BaiTap
                     list2 = new List<string>(list2);
                     break;
             };
-        }     
+        }
 
         // Nhạc game
         private void startTime(bool what)
         {
             if (what == true)
             {
-                mediaPlayer.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\musicMap55.mp3"));
+                mediaPlayer.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\musicMap55.mp3"));
                 mediaPlayer.Play();
                 timer.Interval = new TimeSpan(0, 3, 0);
                 timer.Tick += (sender, args) =>
                 {
                     mediaPlayer.Stop();
-                    mediaPlayer.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\musicMap55.mp3"));
+                    mediaPlayer.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\musicMap55.mp3"));
                     mediaPlayer.Play();
                 };
                 timer.Start();
@@ -638,7 +599,7 @@ namespace BaiTap
             canvas.Background = myBrush1;
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             //
             for (var i = 0; i < 3; i++)
             {
@@ -766,7 +727,7 @@ namespace BaiTap
         }
 
         public void tabInfo(bool check)
-        {   
+        {
             Canvas canvas = new Canvas();
             canvas.Height = 500;
             canvas.Width = 850;
@@ -827,7 +788,7 @@ namespace BaiTap
             myButtonStyleC.Setters.Add(new Setter(Button.TemplateProperty, myButtonTemplate1));
             buttonC.Style = myButtonStyleC;
             buttonC.BorderBrush = null;
-            buttonC.Background = myBrushButtonC;          
+            buttonC.Background = myBrushButtonC;
             buttonC.Cursor = Cursors.Hand;
             buttonC.Click += (sender, args) =>
             {
@@ -847,9 +808,9 @@ namespace BaiTap
             margin1.Top = main.Height / 2 - 40;
             margin1.Left = main.Width / 2 - buttonC.Width / 2;
             buttonC.Margin = margin1;
-            Canvas.SetTop(buttonC, 70);         
-            Canvas.SetTop(image, 20);         
-            Canvas.SetLeft(image, -10);         
+            Canvas.SetTop(buttonC, 70);
+            Canvas.SetTop(image, 20);
+            Canvas.SetLeft(image, -10);
             canvas.Children.Add(buttonC);
             canvas.Children.Add(image);
             var marginCanvas = canvas.Margin;
@@ -872,7 +833,7 @@ namespace BaiTap
             canvas.Background = myBrush1;
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             //
             for (var i = 0; i < 2; i++)
             {
@@ -1012,7 +973,7 @@ namespace BaiTap
         {
 
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             ImageBrush myBrushButtonT = new ImageBrush();
             ImageBrush myBrushButtonF = new ImageBrush();
             ImageBrush myBrushButtonMenu = new ImageBrush();
@@ -1089,7 +1050,7 @@ namespace BaiTap
         public void Controler()
         {
             MediaPlayer mediaPlayer1 = new MediaPlayer();
-            mediaPlayer1.Open(new Uri(start.Path+"\\BINGO_WPF\\music\\button.mp3"));
+            mediaPlayer1.Open(new Uri(start.Path + "\\BINGO_WPF\\music\\button.mp3"));
             ImageBrush myBrushButtonC = new ImageBrush();
             myBrushButtonC.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo5x5/button_callBingo.png"));
             Style myButtonStyleC = new Style(typeof(Button));
@@ -1123,16 +1084,16 @@ namespace BaiTap
                 switch (Key)
                 {
                     case "DỄ":
-                        number = 30;
-                        checkBall = 29;
+                        number = 38;
+                        checkBall = 37;
                         break;
                     case "TRUNG BÌNH":
-                        number = 35;
-                        checkBall =34;
+                        number = 44;
+                        checkBall = 43;
                         break;
                     case "KHÓ":
-                        number = 35;
-                        checkBall = 34;
+                        number = 40;
+                        checkBall = 39;
                         break;
                 };
                 if (checkTime == true)
@@ -1172,19 +1133,19 @@ namespace BaiTap
                     dispatcherTimer.Stop();
                 }
             }
-            }
+        }
 
         // Load Form
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            tbMode.Text = Key;            
+            tbMode.Text = Key;
             tabInfo(true);
             startGame();
             checkNum(false);
             Controler();
             buttonControler();
             startTime(true);
-            cardGame();           
+            cardGame();
         }
 
     }

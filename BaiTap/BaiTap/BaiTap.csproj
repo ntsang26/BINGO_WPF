@@ -75,6 +75,9 @@
     <None Remove="img\StartGame\logoStart.png" />
     <None Remove="img\ui_img\A.png" />
     <None Remove="img\ui_img\ad.png" />
+    <None Remove="img\ui_img\background3x3.jpg" />
+    <None Remove="img\ui_img\background4x4.jpg" />
+    <None Remove="img\ui_img\background5x5.jpg" />
     <None Remove="img\ui_img\backgroundMenu.png" />
     <None Remove="img\ui_img\BG_home.png" />
     <None Remove="img\ui_img\boder_character.png" />
@@ -246,6 +249,8 @@
     <Resource Include="img\StartGame\logoStart.png" />
     <Resource Include="img\ui_img\A.png" />
     <Resource Include="img\ui_img\ad.png" />
+    <Resource Include="img\ui_img\background4x4.jpg" />
+    <Resource Include="img\ui_img\background5x5.jpg" />
     <Resource Include="img\ui_img\backgroundMenu.png" />
     <Resource Include="img\ui_img\BG_home.png" />
     <Resource Include="img\ui_img\boder_character.png" />
@@ -354,6 +359,7 @@
     <Resource Include="img\ui_img\tick done.png" />
     <Resource Include="img\ui_img\title_character.png" />
     <Resource Include="img\ui_img\Unchoose.png" />
+    <Resource Include="img\ui_img\background3x3.jpg" />
     <Resource Include="img\ui_img\xem ad.png" />
     <Resource Include="img\ui_img\yes.png" />
     <Resource Include="img\ui_img\yes_button.png" />

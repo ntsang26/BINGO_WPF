@@ -73,6 +73,8 @@
     <None Remove="img\StartGame\buttonClose.png" />
     <None Remove="img\StartGame\buttonStart.png" />
     <None Remove="img\StartGame\logoStart.png" />
+    <None Remove="img\ui_img\._background4x4.jpg" />
+    <None Remove="img\ui_img\._background5x5.jpg" />
     <None Remove="img\ui_img\A.png" />
     <None Remove="img\ui_img\ad.png" />
     <None Remove="img\ui_img\background3x3.jpg" />
@@ -247,6 +249,8 @@
     <Resource Include="img\StartGame\buttonClose.png" />
     <Resource Include="img\StartGame\buttonStart.png" />
     <Resource Include="img\StartGame\logoStart.png" />
+    <Resource Include="img\ui_img\._background4x4.jpg" />
+    <Resource Include="img\ui_img\._background5x5.jpg" />
     <Resource Include="img\ui_img\A.png" />
     <Resource Include="img\ui_img\ad.png" />
     <Resource Include="img\ui_img\background4x4.jpg" />

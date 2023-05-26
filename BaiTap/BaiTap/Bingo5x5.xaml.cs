@@ -21,7 +21,7 @@ namespace BaiTap
         {
             InitializeComponent();
             ImageBrush imageBrush = new ImageBrush();
-            imageBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/Bingo5x5/backgroundMain5x5.jpg"));
+            imageBrush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/img/ui_img/background5x5.jpg"));
             this.Background = imageBrush;
             Key = key;
         }
